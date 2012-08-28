@@ -1,3 +1,5 @@
+# WORK IN PROGRESS: There is nothing useful for you here until this warning is removed.
+
 # depmake
 
 depmake is a collection of bash functions and conventions for creating

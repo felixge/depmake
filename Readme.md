@@ -2,11 +2,14 @@
 
 depmake is a collection of bash functions and conventions for creating
 applications that can bundle all their code and dependencies inside a simple
-tar file that be extracted and used to run your app on any system (of the same
-kernel / architecture).
+tar file. This file can be used to extract and run your app on any system (of
+the same kernel / architecture).
 
 depmake has a certain overlap with tools such as [chef][] and [puppet][], but
-is much more focused and simple (~500 lines of bash).
+only contains features required to contain deployable archives.
+
+depmake also has a certain overlap with package managers such as [apt][] and
+[pacman][], but is yet again laser focused on creating deployable archives.
 
 However, [simple does not mean easy][]. depmake is a tool that allows you to
 create simple deployment systems at the cost of more initial work.

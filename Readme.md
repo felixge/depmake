@@ -6,7 +6,7 @@ tar file. The resulting archive can be used to extract and run your app on any
 system (of the same kernel / architecture).
 
 depmake has a certain overlap with tools such as [chef][] and [puppet][], but
-only contains features required to contain deployable archives.
+only contains features required to create deployable archives.
 
 depmake also has a certain overlap with package managers such as [apt][] and
 [pacman][], but is yet again laser focused on creating deployable archives.

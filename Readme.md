@@ -1,7 +1,9 @@
 # depmake
 
 depmake is a collection of bash functions and conventions for creating
-applications that can bundle all their code and dependencies inside a tar file.
+applications that can bundle all their code and dependencies inside a simple
+tar file that be extracted and used to run your app on any system (of the same
+kernel / architecture).
 
 depmake has a certain overlap with tools such as [chef][] and [puppet][], but
 is much more focused and simple (~500 lines of bash).

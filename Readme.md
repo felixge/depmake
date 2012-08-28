@@ -35,7 +35,7 @@ This will kick off a process in which all your dependencies are built and
 installed into a folder called `stack`. Your `my-config.sh` then contains
 some code like this:
 
-```
+```bash
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export STACK_DIR="${ROOT_DIR}/stack"
 

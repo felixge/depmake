@@ -14,6 +14,12 @@ depmake also has a certain overlap with package managers such as [apt][] and
 However, [simple does not mean easy][]. depmake is a tool that allows you to
 create simple deployment systems at the cost of more initial work.
 
+[chef]: http://www.opscode.com/chef/
+[puppet]: http://puppetlabs.com/
+[apt]: http://en.wikipedia.org/wiki/Advanced_Packaging_Tool
+[pacman]: https://wiki.archlinux.org/index.php/Pacman
+[simple does not mean easy]: http://www.infoq.com/presentations/Simple-Made-Easy
+
 ## Overview
 
 A typical depmake project allows you to check out a fresh copy of your project,
@@ -49,6 +55,3 @@ So effictively this creates a virtual environment that is activated by sourcing
 a bash file, and de-activated by starting a new shell session.
 
 
-[chef]: http://www.opscode.com/chef/
-[puppet]: http://puppetlabs.com/
-[simple does not mean easy]: http://www.infoq.com/presentations/Simple-Made-Easy

@@ -23,7 +23,7 @@ _dm_build_dir() {
   echo ${DM_BUILD_DIR}/${packet}
 }
 
-_dm_sha1() {
+dm_sha1() {
   openssl sha1 ${1} | cut -d ' ' -f 2
 }
 
@@ -36,7 +36,7 @@ _dm_verify_sha1() {
     return 1
   fi
 
-  local actual_sha1=`_dm_sha1 ${path}`
+  local actual_sha1=`dm_sha1 ${path}`
 
   if [ "${actual_sha1}" != "${expected_sha1}" ]; then
     echo "Error: expected sha1: ${expected_sha1}, but got: ${actual_sha1} for ${path}"
@@ -60,15 +60,21 @@ _dm_calculate_fingerprint() {
   local packet=${1}
   local deps=${@:2}
   local packet_file=`_dm_packet_file ${packet}`
-  local fingerprint="${packet}-`_dm_sha1 ${packet_file}`"
+  local packet_fingerprint="${packet}-`dm_sha1 ${packet_file}`"
 
+  local dep_fingerprints=""
   for dep in ${deps[@]}
   do
     local dep_fingerprint=`_dm_read_fingerprint ${dep}`
-    fingerprint="${fingerprint}:${dep_fingerprint}"
+    dep_fingerprints="${dep_fingerprints}:${dep_fingerprint}"
   done
 
-  echo ${fingerprint}
+  local packet_custom_fingerprint=""
+  if type fingerprint >/dev/null 2>&1; then
+    packet_custom_fingerprint=":`fingerprint`"
+  fi
+
+  echo "${packet_fingerprint}${packet_custom_fingerprint}${dep_fingerprints}"
 }
 
 _dm_read_fingerprint() {

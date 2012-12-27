@@ -70,6 +70,8 @@ _dm_calculate_fingerprint() {
   done
 
   local packet_custom_fingerprint=""
+  # a packet may provide a custom fingerprint function, this checks if such
+  # a function exists
   if type fingerprint >/dev/null 2>&1; then
     packet_custom_fingerprint=":`fingerprint`"
   fi
